@@ -7,8 +7,7 @@ void registrarGasto() {
   String categoria = validarCategoria();
   print("Ingrese el nombre del producto:");
   String producto = stdin.readLineSync()!;
-  print("Ingrese el monto del gasto:");
-  double monto = double.parse(stdin.readLineSync()!);
+  double monto = validarMonto();
   Gastos.add({'categoria': categoria, 'producto': producto, 'monto': monto});
 }
 
@@ -47,7 +46,33 @@ String validarCategoria() {
 void gastosCategorias() {
   print("\n\n GASTOS POR CATEGORÍA");
   double totalCategorias;
-  if()
+  List<String> categorias = [
+    "comida",
+    "transporte",
+    "entretenimiento",
+    "servicios",
+  ];
+  for (String categoria in categorias) {
+    totalCategorias = 0;
+    print("\nGastos en $categoria:");
+    for (var gasto in Gastos) {
+      if (gasto['categoria'] == categoria) {
+        totalCategorias += gasto['monto'];
+        print("Producto: ${gasto['producto']}    Monto: ${gasto['monto']}");
+      }
+    }
+    print("Total en $categoria: $totalCategorias");
+    print("------------------------------------------");
+  }
+}
+
+void gastosTotales() {
+  double totalGastos = 0;
+  for (var gasto in Gastos) {
+    totalGastos += gasto['monto'];
+    print("Producto: ${gasto['producto']}    Monto: ${gasto['monto']}");
+  }
+  print("Total de gastos: $totalGastos");
 }
 
 void menu() {
@@ -63,13 +88,22 @@ void menu() {
       registrarGasto();
       break;
     case 2:
+      gastosCategorias();
       break;
     case 3:
+      gastosTotales();
+      break;
+    case 4:
       exit(0);
     default:
       print("Opción no válida");
       menu();
   }
+  print("\nPresione enter para continuar...");
+  String pausa = stdin.readLineSync()!;
+  menu();
 }
 
-void main(List<String> args) {}
+void main(List<String> args) {
+  menu();
+}
