@@ -31,7 +31,7 @@ void registrarUsuario() {
     "telefono": phone,
   });
 
-  print("Usuario registrado exitosamente.\presione Enter para continuar...");
+  print("Usuario registrado exitosamente.\n presione Enter para continuar...");
   String salir = stdin.readLineSync()!;
   print(salir);
 }

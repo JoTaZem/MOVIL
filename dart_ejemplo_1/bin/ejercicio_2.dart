@@ -59,6 +59,7 @@ void opcionesMenu(int opcion) {
   }
   print("Presione Enter(o cualquier tecla alfanumerica) para continuar...");
   String pausa = stdin.readLineSync()!;
+  print(pausa);
 }
 
 void iterarMenu() {

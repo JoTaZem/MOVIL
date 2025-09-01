@@ -1,6 +1,6 @@
 import 'dart:io';
 
-List<Map<String, dynamic>> Gastos = [];
+List<Map<String, dynamic>> gastos = [];
 
 void registrarGasto() {
   print("\n\n\n\n   REGISTRAR GASTO");
@@ -8,7 +8,7 @@ void registrarGasto() {
   print("Ingrese el nombre del producto:");
   String producto = stdin.readLineSync()!;
   double monto = validarMonto();
-  Gastos.add({'categoria': categoria, 'producto': producto, 'monto': monto});
+  gastos.add({'categoria': categoria, 'producto': producto, 'monto': monto});
 }
 
 double validarMonto() {
@@ -55,7 +55,7 @@ void gastosCategorias() {
   for (String categoria in categorias) {
     totalCategorias = 0;
     print("\nGastos en $categoria:");
-    for (var gasto in Gastos) {
+    for (var gasto in gastos) {
       if (gasto['categoria'] == categoria) {
         totalCategorias += gasto['monto'];
         print("Producto: ${gasto['producto']}    Monto: ${gasto['monto']}");
@@ -68,7 +68,7 @@ void gastosCategorias() {
 
 void gastosTotales() {
   double totalGastos = 0;
-  for (var gasto in Gastos) {
+  for (var gasto in gastos) {
     totalGastos += gasto['monto'];
     print("Producto: ${gasto['producto']}    Monto: ${gasto['monto']}");
   }
@@ -101,6 +101,7 @@ void menu() {
   }
   print("\nPresione enter para continuar...");
   String pausa = stdin.readLineSync()!;
+  print(pausa);
   menu();
 }
 
