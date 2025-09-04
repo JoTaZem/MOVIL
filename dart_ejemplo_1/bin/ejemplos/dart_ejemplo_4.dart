@@ -38,7 +38,7 @@ String imprimirAdso(String palabra){
   if(palabra=="ADSO" || palabra=="adso"){
     return "saliste con palabra $palabra";
   }else{
-    print("La palabra ingresada no es ADSO o a  adso, intente nuevamente:");
+    print("La palabra ingresada no es ADSO o adso, intente nuevamente:");
     return imprimirAdso(stdin.readLineSync()!);
   }
 }

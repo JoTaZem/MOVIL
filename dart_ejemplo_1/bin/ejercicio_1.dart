@@ -2,7 +2,7 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print("_____________________________________________");
+  print("\n\n\n_____________________________________________");
   print("       CALCULADORA DE CONSUMO DE DATOS        ");
   print("_____________________________________________");
   consumoMb();
