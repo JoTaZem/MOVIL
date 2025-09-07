@@ -1,14 +1,21 @@
-//PARTE 1. SINTAXIS BASICA Y VARIABLES
+import 'dart:io';
 
+//14. Conversor de temperatura
 void main(List<String> args) {
-  ///1. imprimir hola mundo
-  print("Hola mundo");
+  convertirEnCelsius();
+  convertirEnFahreinheit();
+}
 
-  ///2. declaracion de variables
-  //variable String para el nombre y variable int para la edad
-  String nombre = "\t*Jhon Fredy Zemanate Benjumea*";
-  int edad = 30;
-  print("nombre: $nombre \t edad: $edad");
+void convertirEnFahreinheit() {
+  print("ingrese la temperatura en Celsius:");
+  int celsius = int.parse(stdin.readLineSync()!);
+  double fahreinheit = (celsius * 9 / 5) + 32;
+  print("$celsius °C son ${fahreinheit.toStringAsFixed(2)} °F");
+}
 
-  //
+void convertirEnCelsius() {
+  print("ingrese la temperatura en Fahreinheit:");
+  int fahreinheit = int.parse(stdin.readLineSync()!);
+  double celsius = (fahreinheit - 32) * 5 / 9;
+  print("$fahreinheit °F son ${celsius.toStringAsFixed(2)} °C");
 }
