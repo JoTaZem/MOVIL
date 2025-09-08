@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_ejemplo_3/screen/DetallePedido.dart';
 class Pedidos extends StatefulWidget {
   const Pedidos({super.key});
 
@@ -33,7 +33,12 @@ class _PedidosState extends State<Pedidos> {
               fit: BoxFit.cover,
             ),
           ),
-
+          trailing: Icon(Icons.arrow_circle_right),
+          onTap: (){
+            print("mis pedidos");
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context)=>Detallepedido()));
+          },
         );
       }),
     );

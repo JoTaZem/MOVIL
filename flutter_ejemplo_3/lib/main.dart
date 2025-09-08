@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ejemplo_3/screen/DetallePedido.dart';
 import 'package:flutter_ejemplo_3/screen/HomePage.dart';
 import 'package:flutter_ejemplo_3/screen/Pedidos.dart';
 
@@ -14,7 +15,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Homepage(), 
-      routes: {'/pedidos':(context)=>Pedidos()}
+      routes: {
+        '/pedidos':(context)=>Pedidos(),
+        '/detallepedidos': (context)=>Detallepedido(),
+        }
     );
   }
 }

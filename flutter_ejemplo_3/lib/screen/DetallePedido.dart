@@ -19,12 +19,10 @@ class _DetallepedidoState extends State<Detallepedido> {
         itemCount: listaPedidos.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
-            child: Column(
-              children: [
-                Text("data"),
-                Text("data")
-
-              ],
+            child: SizedBox(
+              child: ListTile(
+                
+              ),
             ),
           );
         },
