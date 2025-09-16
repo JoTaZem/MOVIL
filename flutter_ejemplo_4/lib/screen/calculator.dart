@@ -75,7 +75,7 @@ class _calculatorState extends State<calculator> {
                   color:Colors.orange[200]
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(height: 12),
               TextFormField(
                 controller: _number1Controller,
                 decoration: InputDecoration(
@@ -94,7 +94,7 @@ class _calculatorState extends State<calculator> {
                   return null;
                 },
               ),
-              SizedBox(width: 10),
+              SizedBox(height: 12),
               TextFormField(
                 controller: _number2Controller,
                 decoration: InputDecoration(
@@ -113,6 +113,7 @@ class _calculatorState extends State<calculator> {
                   return null;
                 },
               ),
+              SizedBox(height: 12),
               Row(
                 children: [
                   SizedBox(width: 12),
