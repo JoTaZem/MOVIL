@@ -13,6 +13,8 @@ class _MenuOpcionState extends State<MenuOpcion> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Menu datos personales"),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
       ),
       drawer: Drawer(
         child: ListView(
@@ -20,15 +22,19 @@ class _MenuOpcionState extends State<MenuOpcion> {
           children: [
             ListTile(
               title: Text("Inicio"),
+              leading: Icon( Icons.home),
             ),
             ListTile(
               title: Text("Acerca de"),
+              leading: Icon( Icons.info),
             ),
             ListTile(
               title: Text("Correo"),
+              leading: Icon( Icons.email),
             ),
             ListTile(
               title: Text("salir"),
+              leading: Icon( Icons.exit_to_app),
             ),
           ],
         ),
@@ -36,7 +42,16 @@ class _MenuOpcionState extends State<MenuOpcion> {
       body: Column(
         children: [
           ListTile(
+            title: Text("Datos personales"),
+            onTap: () {
+              Navigator.pushNamed(context, '/datosPersonales');
+            },
+          ),
+          ListTile(
             title: Text("Estudios"),
+            onTap: () {
+              Navigator.pushNamed(context, '/estudios');
+            },
           ),
           ListTile(
             title: Text("Empleos"),
@@ -44,5 +59,6 @@ class _MenuOpcionState extends State<MenuOpcion> {
         ],
       ),
     );
+    
   }
 }
